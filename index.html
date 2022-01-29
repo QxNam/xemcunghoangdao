@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="xemcunghoangdao" content="width=device-width, initial-scale=1.0">
+    <title>cunghoangdao</title>
+    <script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+    <h1 align='center'>Xem cung hoàng đạo</h1> <hr>
+    <table align='center' border="0">
+        <tr>
+            <td><label>Ngày sinh</label></td>
+            <td><input type="text" id="ngs" size="4"></td>
+        </tr>
+        <tr>
+            <td><label>Tháng sinh</label></td>
+            <td><input type="text" id="ths" size="4"></td>
+        </tr>
+        
+        <tr>
+            <td colspan="2" align="center"><input type="button" value="Kiểm tra" onclick="show()"></td>
+            <!--$('#res').val(kiemTraCHD(Number(dd.value), Number(mm.value)))-->
+            <script type="text/javascript">
+                function show() {
+                    var a = parseInt($('#ngs').val());
+			        var b = parseInt($('#ths').val());
+			        var re = kiemTraCHD(a,b);
+			        $('#res').val(re);
+                }
+function kiemTraCHD(dd,mm) {
+    var head_text="Bạn thuộc cung ";
+    switch (mm) {
+        case 1:
+            if( dd<=19 && dd>0)
+                head_text+="ma kết";
+            else if (dd>19 && dd<=31)
+                head_text+="bảo bình";
+            break;
+        case 2:
+            if(dd<=18 && dd>0)
+                head_text+="bảo bình";
+              else if(dd>18 && dd<=28)
+                head_text+="song ngư";
+            break;
+        case 3:
+            if(dd<=20 && dd>0)
+                head_text+="song ngư";
+            else if(dd>18 && dd<=28)
+                head_text+="bạch dương";
+            break;
+        case 4:
+            if(dd<=19 && dd>0)
+                head_text+="bạch dương";
+            else if(dd>19 && dd<=30)
+                head_text+="kim ngưu";
+            break;
+        case 5:
+            if(dd<=20 && dd>0)
+                head_text+="kim ngưu";
+            else if(dd>20 && dd<=31)
+                head_text+="song tử";
+            break;
+        case 6:
+            if(dd<=21 && dd>0)
+                head_text+="song tử";
+            else if(dd>21 && dd<=30)
+                head_text+="cự giải";
+            break;
+        case 7:
+            if(dd<=22 && dd>0)
+                head_text+="cự giải";
+            else if(dd>22 && dd<=31)
+                head_text+=+"sư tử";
+            break;
+        case 8:
+            if(dd<=22 && dd>0)
+                head_text+="sư tử";
+            else if(dd>22 && dd<=31)
+                head_text+="sử nữ";
+            break;
+        case 9:
+            if(dd<=22 && dd>0)
+                head_text+="sử nữ";
+            else if(dd>22 && dd<=30)
+                head_text+="thiên bình";
+            break;
+        case 10:
+            if(dd<=23 && dd>0)
+                head_text+="thiên bình";
+            else if(dd>23 && dd<=31)
+                head_text+="hổ cáp";
+            break;
+        case 11:
+            if(dd<=21 && dd>0)
+                head_text+="hổ cáp";
+            else if(dd>21 && dd<=30)
+                head_text+="nhân mã";
+            break;
+        case 12:
+            if(dd<=21 && dd>0)
+                head_text+="nhân mã";
+            else if(dd>21 && dd<=31)
+                head_text+="ma kết";
+            break;
+        
+    }
+    return head_text!="Bạn thuộc cung "?head_text:"Sai thông tin";
+}
+            </script>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="text" placeholder="kết quả" id="res"></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
